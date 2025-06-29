@@ -6,6 +6,36 @@ namespace DNC_HelloWorld1
     {
         public static void Main(string[] args)
         {
+            // 引数が無ければ C89 インタプリタの簡易テストを実行
+            if (args.Length == 0)
+            {
+                string sample = @"
+int main() {
+    x = 0;
+    i = 0;
+    while (i < 10) {
+        x = x + i;
+        i = i + 1;
+    }
+    if (x == 45) {
+        return 0;
+    }
+    return 1;
+}
+";
+
+                try
+                {
+                    int result = CInterpreter.RunC(sample);
+                    Console.WriteLine($"Sample C program returned {result}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Interpreter error: {ex.Message}");
+                }
+                return;
+            }
+
             Console.WriteLine("Hello, World!");
             // 追加でスタートメッセージを表示
             Console.WriteLine("Start Game");
