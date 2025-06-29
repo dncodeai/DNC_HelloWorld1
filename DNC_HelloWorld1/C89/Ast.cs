@@ -16,7 +16,7 @@ namespace DNC_HelloWorld1.C89
     {
         public string ReturnType { get; set; } = "int";
         public string Name { get; set; } = string.Empty;
-        public List<ParameterDeclaration> Parameters { get; } = new();
+        public List<ParameterDeclaration> Parameters { get; set; } = new();
         public CompoundStatement Body { get; set; } = new();
     }
 
@@ -36,7 +36,7 @@ namespace DNC_HelloWorld1.C89
 
     public class CompoundStatement : Statement
     {
-        public List<Statement> Statements { get; } = new();
+        public List<Statement> Statements { get; set; } = new();
     }
 
     public class ExpressionStatement : Statement
