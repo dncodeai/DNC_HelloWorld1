@@ -61,7 +61,7 @@ namespace DNC_HelloWorld1.C89
             {
                 ReturnType = type,
                 Name = name,
-                Parameters = { parameters },
+                Parameters = parameters,
                 Body = body
             };
         }
@@ -85,7 +85,7 @@ namespace DNC_HelloWorld1.C89
             {
                 stmts.Add(ParseStatement());
             }
-            return new CompoundStatement { Statements = { stmts } };
+            return new CompoundStatement { Statements = stmts };
         }
 
         private Statement ParseStatement()
